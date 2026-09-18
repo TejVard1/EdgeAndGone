@@ -1,0 +1,28 @@
+# CMake and native builds
+/build/
+/out/
+CMakeUserPresets.json
+compile_commands.json
+
+# Node and web builds
+node_modules/
+web/node_modules/
+web/dist/
+*.tsbuildinfo
+
+# Emscripten outputs
+*.wasm
+*.worker.js
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime artifacts
+*.log
+.env
+.env.*
+!.env.example
+replays/

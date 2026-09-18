@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundary-cricket.dev/schemas/message-envelope.schema.json",
+  "title": "Boundary Cricket protocol envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "type", "requestId", "payload"],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "type": {
+      "type": "string",
+      "pattern": "^[a-z]+(\\.[a-z_]+)+$",
+      "maxLength": 64
+    },
+    "requestId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "roomCode": {
+      "type": "string",
+      "pattern": "^[A-HJ-NP-Z2-9]{8}$"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "serverTimeMs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}
